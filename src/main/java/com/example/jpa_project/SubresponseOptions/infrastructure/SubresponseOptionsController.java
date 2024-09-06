@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/response-questions")
+@RequestMapping("/subresponse-questions")
 public class SubresponseOptionsController {
     private final SubresponseOptionsService service;
 
