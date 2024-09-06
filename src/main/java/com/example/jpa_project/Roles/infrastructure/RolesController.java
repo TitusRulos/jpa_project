@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/response-questions")
+@RequestMapping("/roles")
 public class RolesController {
     private final RolesService service;
 
