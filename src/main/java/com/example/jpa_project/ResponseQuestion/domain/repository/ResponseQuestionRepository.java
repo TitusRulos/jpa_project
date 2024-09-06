@@ -1,24 +1,11 @@
 package com.example.jpa_project.ResponseQuestion.domain.repository;
-// ResponseQuestion.java
-public class ResponseQuestionRepository {
-    private Long id;
-    private Long questionId;
-    private String response;
 
-    // Constructors, getters, and setters
-    public ResponseQuestionRepository() {}
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import com.example.jpa_project.ResponseQuestion.domain.models.*;
 
-    public ResponseQuestionRepository(Long id, Long questionId, String response) {
-        this.id = id;
-        this.questionId = questionId;
-        this.response = response;
-    }
+@Repository
+public interface ResponseQuestionRepository extends
+        JpaRepository<ResponseQuestion, Long> {
 
-    // Getters and setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-    public Long getQuestionId() { return questionId; }
-    public void setQuestionId(Long questionId) { this.questionId = questionId; }
-    public String getResponse() { return response; }
-    public void setResponse(String response) { this.response = response; }
 }

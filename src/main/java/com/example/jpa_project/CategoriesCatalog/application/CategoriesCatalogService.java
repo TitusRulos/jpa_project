@@ -27,7 +27,23 @@ public class CategoriesCatalogService {
         return repository.save(category);
     }
 
-    public void deleteById(Long id) {
-        repository.deleteById(id);
+    public Optional<CategoriesCatalog> update(Long id, CategoriesCatalog questions) {
+        Optional<CategoriesCatalog> chapterOpt = repository.findById(id);
+
+        if (chapterOpt.isPresent()) {
+            CategoriesCatalog existingQuestions = chapterOpt.orElseThrow();
+
+            return Optional.of(repository.save(existingQuestions));
+        }
+
+        return chapterOpt;
+    }
+
+    public Optional<CategoriesCatalog> delete(Long id) {
+        Optional<CategoriesCatalog> chapterOpt = repository.findById(id);
+        chapterOpt.ifPresent(chapterItem -> {
+            repository.delete(chapterItem);
+        });
+        return chapterOpt;
     }
 }

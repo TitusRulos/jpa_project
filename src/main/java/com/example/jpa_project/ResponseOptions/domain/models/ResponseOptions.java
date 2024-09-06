@@ -3,7 +3,7 @@ package com.example.jpa_project.ResponseOptions.domain.models;
 import com.example.jpa_project.Questions.domain.models.Questions;
 import jakarta.persistence.*;
 import lombok.*;
-import com.example.jpa_project.ResponseQuestion.domain.models.ResponseQuetion;
+import com.example.jpa_project.ResponseQuestion.domain.models.ResponseQuestion;
 
 @Data
 @Builder
@@ -28,5 +28,5 @@ public class ResponseOptions {
 
     @ManyToOne
     @JoinColumn(name = "response_question_id") // Esta columna referencia a ResponseQuestion
-    private ResponseQuetion responseQuetion; // Esta propiedad debe existir
+    private ResponseQuestion responseQuetion; // Esta propiedad debe existir
 }

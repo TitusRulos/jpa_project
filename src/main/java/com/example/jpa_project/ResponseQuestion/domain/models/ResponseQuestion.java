@@ -4,14 +4,13 @@ import com.example.jpa_project.SubresponseOptions.domain.models.SubresponseOptio
 import jakarta.persistence.*;
 import lombok.*;
 
-
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "response_quetion")
-public class ResponseQuetion{
+public class ResponseQuestion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,7 +25,4 @@ public class ResponseQuetion{
     @JoinColumn(name = "subresponse_option_id")
     private SubresponseOptions subresponseOptions;
 
-    
-
 }
-

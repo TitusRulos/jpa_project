@@ -1,26 +1,17 @@
 package com.example.jpa_project.ResponseOptions.domain.repository;
-// ResponseOptions.java
-public class ResponseOptionsRepository {
-    private Long id;
-    private String optionText;
-    private Integer value;
 
-    // Constructors, getters, and setters
-    public ResponseOptionsRepository() {
+import java.util.Optional;
 
-    }
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import com.example.jpa_project.ResponseOptions.domain.models.*;
 
-    public ResponseOptionsRepository(Long id, String optionText, Integer value) {
-        this.id = id;
-        this.optionText = optionText;
-        this.value = value;
-    }
+import jakarta.validation.Valid;
 
-    // Getters and setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-    public String getOptionText() { return optionText; }
-    public void setOptionText(String optionText) { this.optionText = optionText; }
-    public Integer getValue() { return value; }
-    public void setValue(Integer value) { this.value = value; }
+@Repository
+public interface ResponseOptionsRepository extends JpaRepository<ResponseOptions, Long> {
+
+    Optional<ResponseOptions> update(Long id, @Valid ResponseOptions question);
+
+    Optional<ResponseOptions> delete(Long id);
 }

@@ -1,4 +1,4 @@
-package com.example.jpa_project.ResponseQuestion.application;
+package com.example.jpa_project.Surveys.application;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,7 +9,7 @@ import com.example.jpa_project.ResponseQuestion.domain.repository.ResponseQuesti
 import com.example.jpa_project.ResponseQuestion.domain.models.ResponseQuestion;
 
 @Service
-public class ResponseQuestionService {
+public class SurveysService {
 
     @Autowired
     private ResponseQuestionRepository repository;
